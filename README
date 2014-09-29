@@ -1,0 +1,9 @@
+@Author: 	Jeff Berube
+@Title:		Dictionary (Assignment #1)	
+@Description:	Takes file input and output single word frequency in a table.
+
+To compile, type make in directory.
+
+Git:
+
+git clone https://github.com/jeffberube/dictionary
