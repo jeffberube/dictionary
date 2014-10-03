@@ -1,9 +1,8 @@
 CC = g++
 OBJ = dictionary.o 
-LIB = 
 
 dictionary: $(OBJ)
-	$(CC) $(OBJ) $(LIB) -g -o $@
+	$(CC) $(OBJ) -g -o $@
 
 .c.o:
 	$(CC) -c $<
