@@ -236,9 +236,10 @@ void dump() {
 
 	}
 
-	cout << endl << endl;
+	cout << endl << endl << endl;
 
 	/* RENDER VERTICAL HISTOGRAM LAYOUT */
+	/* Find out max frequency */
 	int height = 0;
 
 	tmp_row = 0;
@@ -250,8 +251,66 @@ void dump() {
 	
 	}
 
+	/* Set max height and truncate if necessary */
+	if (height > 10) height = 10;
+
+	/* Draw vertical histogram */
+	while (height > 0) {
 	
+		str_pad(margin, ' ');		
+		tmp_row = 0;
+
+		while (tmp_row < ptr) {
 	
+			if (freq[tmp_row] >= height) cout << "#";
+			else cout << " ";
+
+			cout << "    ";
+			tmp_row++;
+		
+		}
+	
+		cout << endl;
+		height--;
+
+	}
+
+	/* Draw horizontal line under histogram */
+	str_pad(margin, ' ');
+	
+	i = 0;
+	
+	while (i++ < ((ptr - 1) * 5) + 1) cout << "=";
+
+	cout << endl;
+
+	/* Print words vertically */
+	height = 0;
+
+	while (height < biggest_word) {
+	
+		str_pad(margin, ' ');
+		tmp_row = 0;
+
+		while (tmp_row < ptr) {
+		
+			if (height < str_len(dictionary[tmp_row]))
+					cout << dictionary[tmp_row][height];
+			else cout << " ";
+
+			cout << "    ";
+
+			tmp_row++;
+
+		}
+
+		cout << endl;
+		height++;
+	
+	}
+
+	cout << endl << endl;
+
 
 }
 
